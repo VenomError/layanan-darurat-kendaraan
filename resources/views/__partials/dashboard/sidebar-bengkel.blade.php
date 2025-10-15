@@ -32,103 +32,56 @@
              </div>
          </div>
          <div class="card-body user-sidebar-body">
-             <ul>
-                 <li>
-                     <a
-                         href="agent-dashboard.html"
-                         class="d-flex align-items-center active"
-                     >
-                         <i class="isax isax-grid-55 me-2"></i>Dashboard
-                     </a>
-                 </li>
-                 <li>
-                     <a
-                         href="agent-listings.html"
-                         class="d-flex align-items-center"
-                     >
-                         <i class="isax isax-menu-14 me-2"></i>Listings
-                     </a>
-                 </li>
-                 <li class="submenu">
-                     <a
-                         href="javascript:void(0);"
-                         class="d-block"
-                     ><i class="isax isax-calendar-tick5 me-2"></i><span>Bookings</span><span
-                             class="menu-arrow"></span></a>
-                     <ul>
-                         <li>
-                             <a
-                                 href="agent-hotel-booking.html"
-                                 class="fs-14 d-inline-flex align-items-center"
-                             >Hotels</a>
-                         </li>
-                         <li>
-                             <a
-                                 href="agent-car-booking.html"
-                                 class="fs-14 d-inline-flex align-items-center"
-                             >Cars</a>
-                         </li>
-                         <li>
-                             <a
-                                 href="agent-cruise-booking.html"
-                                 class="fs-14 d-inline-flex align-items-center"
-                             >Cruise</a>
-                         </li>
-                         <li>
-                             <a
-                                 href="agent-tour-booking.html"
-                                 class="fs-14 d-inline-flex align-items-center"
-                             >Tour</a>
-                         </li>
-                         <li>
-                             <a
-                                 href="agent-flight-booking.html"
-                                 class="fs-14 d-inline-flex align-items-center"
-                             >Flights</a>
-                         </li>
-                     </ul>
-                 </li>
-                 <li>
-                     <a
-                         href="agent-enquirers.html"
-                         class="d-flex align-items-center"
-                     >
-                         <i class="isax isax-magic-star5 me-2"></i>Enquiries
-                     </a>
-                 </li>
-                 <li>
-                     <a
-                         href="agent-earnings.html"
-                         class="d-flex align-items-center"
-                     >
-                         <i class="isax isax-wallet-add-15 me-2"></i>Earnings
-                     </a>
-                 </li>
-                 <li>
-                     <a
-                         href="agent-review.html"
-                         class="d-flex align-items-center"
-                     >
-                         <i class="isax isax-magic-star5 me-2"></i>Reviews
-                     </a>
-                 </li>
-                 <li>
-                     <a
-                         href="agent-settings.html"
-                         class="d-flex align-items-center"
-                     >
-                         <i class="isax isax-setting-25"></i> Settings
-                     </a>
-                 </li>
-                 <li class="logout-link">
-                     <a
-                         href="{{ route('logout') }}"
-                         class="d-flex align-items-center pb-0"
-                     >
-                         <i class="isax isax-logout-15"></i> Logout
-                     </a>
-                 </li>
-             </ul>
+         <ul>
+    <li>
+        <a href="{{ route('dashboard') }}" class="d-flex align-items-center">
+            <i class="isax isax-element-2 me-2"></i>Dashboard
+        </a>
+    </li>
+
+    <li>
+         <div class="message-content">
+                        <a
+                            href="chat.html"
+                            class="d-flex align-items-center"
+                        >
+                            <i class="isax isax-danger"></i> Reuqest Darurat
+                        </a>
+                        <span class="msg-count bg-danger rounded-circle">02</span>
+                    </div>
+    </li>
+
+    <li>
+        <a href="{{ route('dashboard') }}" class="d-flex align-items-center">
+            <i class="isax isax-clock me-2"></i>History
+        </a>
+    </li>
+
+    <li>
+        <a href="{{ route('dashboard') }}" class="d-flex align-items-center">
+            <i class="isax isax-building me-2"></i>Bengkel
+        </a>
+    </li>
+
+    <li>
+        <a href="{{ route('dashboard') }}" class="d-flex align-items-center">
+            <i class="isax isax-setting-2 me-2"></i>Service
+        </a>
+    </li>
+
+    <li>
+        <a href="{{ route('dashboard') }}" class="d-flex align-items-center">
+            <i class="isax isax-user me-2"></i>Account
+        </a>
+    </li>
+
+    <li class="logout-link">
+        <a href="{{ route('logout') }}" class="d-flex align-items-center pb-0">
+            <i class="isax isax-logout-1 me-2"></i>Logout
+        </a>
+    </li>
+</ul>
+
          </div>
      </div>
  </div>

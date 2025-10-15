@@ -7,25 +7,21 @@
     </div>
     <div class="card-body">
         @error('register')
-            <div
-                class="alert alert-danger mt-0 text-center"
-                role="alert"
-            >
+            <div class="alert alert-danger mt-0 text-center" role="alert">
                 <b>Register Failed </b> - {{ $message }}
             </div>
         @enderror
-        <form
-            {{ route('registerProcess') }}
-            method="post"
-        >
+        <form {{ route('registerProcess') }} method="post">
             @csrf
             <div class="mb-3">
-                <x-input-icon
-                    name="name"
-                    label="Name"
-                    placeholder="Enter Full Name"
-                    icon="ri-user-line"
-                />
+                <x-input-icon-select name="role" label="Role" icon="isax isax-profile-tick" >
+                    <option @selected(old('role') == \App\Enum\UserRole::BENGKEL->value ) value="{{ \App\Enum\UserRole::BENGKEL->value }}">Bengkel</option>
+                    <option @selected(old('role') == \App\Enum\UserRole::PUBLIC->value ) value="{{ \App\Enum\UserRole::PUBLIC->value }}">Pengguna</option>
+                </x-input-icon-select>
+
+            </div>
+            <div class="mb-3">
+                <x-input-icon name="name" label="Name" placeholder="Enter Full Name" icon="ri-user-line" />
             </div>
             <div class="mb-3">
                 <x-input-icon
@@ -37,33 +33,23 @@
                 />
             </div>
             <div class="mb-3">
-                <x-input-icon-password
-                    name="password"
-                    label="password"
-                    placeholder="Enter Password"
-                    icon="ri-lock-line"
-                />
+                <x-input-icon-password name="password" label="password" placeholder="Enter Password"
+                    icon="ri-lock-line" />
             </div>
             <div class="mb-3">
-                <x-input-icon-password
-                    name="password_confirmation"
-                    label="password confirmation"
-                    placeholder="Enter Password confirmation"
-                    icon="ri-lock-line"
+                <x-input-icon-password name="password_confirmation" label="password confirmation"
+                    placeholder="Enter Password confirmation" icon="ri-lock-line"
                 />
             </div>
 
             <div class="mb-3">
-                <button
+                <button class="btn btn-xl btn-primary d-flex align-items-center justify-content-center w-100"
                     type="submit"
-                    class="btn btn-xl btn-primary d-flex align-items-center justify-content-center w-100"
                 >Register<i class="isax isax-arrow-right-3 ms-2"></i></button>
             </div>
             <div class="d-flex justify-content-center">
-                <p class="fs-14">Already have an account? <a
-                        href="{{ route('login') }}"
-                        class="link-primary fw-medium"
-                    >Sign In</a></p>
+                <p class="fs-14">Already have an account? <a class="link-primary fw-medium"
+                        href="{{ route('login') }}">Sign In</a></p>
             </div>
         </form>
     </div>

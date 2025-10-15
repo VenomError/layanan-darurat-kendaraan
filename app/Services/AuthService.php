@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Enum\UserRole;
 use Auth;
 use App\Models\User;
 
@@ -21,12 +22,13 @@ class AuthService
             throw new \Exception("Invalid Email or Password");
         }
         flash('Login Success');
-        return redirect()->intended('/dashboard');
+        return redirect()->intended('/dashboard-redirect');
     }
 
     public function register(
         string $name,
         string $email,
+        UserRole $role,
         string $password,
     ) {
         try {
@@ -34,6 +36,7 @@ class AuthService
 
             $user->name = $name;
             $user->email = $email;
+            $user->role = $role;
             $user->password = $password;
 
             $user->save();

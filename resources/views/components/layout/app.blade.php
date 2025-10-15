@@ -153,10 +153,10 @@
         <!-- cursor JS -->
         <x-script src="assets/js/cursor.js"></x-script>
 
+        @stack('script')
         <!-- Script JS -->
         <x-script src="assets/js/script.js"></x-script>
 
-        @stack('script')
 
     </body>
 

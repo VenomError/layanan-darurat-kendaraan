@@ -131,9 +131,6 @@
 
                 <div class="row">
                     @switch(auth()->user()->role)
-                        @case(UserRole::ADMIN)
-                            @include('__partials.dashboard.sidebar-admin')
-                        @break
 
                         @case(UserRole::BENGKEL)
                             @include('__partials.dashboard.sidebar-bengkel')

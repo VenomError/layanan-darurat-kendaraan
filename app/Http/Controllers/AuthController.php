@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Enum\UserRole;
 use Illuminate\Http\Request;
 use App\Services\AuthService;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -42,6 +44,7 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required|string',
             'email' => 'required|email|unique:users,email',
+            'role' => ['required' , Rule::in(UserRole::values())],
             'password' => 'required|confirmed:password_confirmation',
         ]);
 
@@ -50,6 +53,7 @@ class AuthController extends Controller
             return $service->register(
                 $request->name,
                 $request->email,
+                UserRole::tryFrom($request->role),
                 $request->password
             );
         } catch (\Throwable $th) {

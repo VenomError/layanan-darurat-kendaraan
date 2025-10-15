@@ -178,7 +178,7 @@
                           @auth
                               <div class="cart-dropdown me-3">
                                   <a
-                                      href="/dashboard"
+                                      href="{{ route('dashboard') }}"
                                       class="position-relative"
                                   >
                                       <i class="isax isax-user"></i>

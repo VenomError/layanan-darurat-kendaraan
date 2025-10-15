@@ -7,21 +7,21 @@ use App\Http\Controllers\AuthController;
 // Authentication
 Route::middleware('guest')->group(function () {
 
-    Route::get('/login', [AuthController::class,'login'])->name('login');
-    Route::post('/login', [AuthController::class,'loginProcess'])->name('loginProcess');
-    Route::get('/register', [AuthController::class,'register'])->name('register');
-    Route::post('/register', [AuthController::class,'registerProcess'])->name('registerProcess');
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/login', [AuthController::class, 'loginProcess'])->name('loginProcess');
+    Route::get('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/register', [AuthController::class, 'registerProcess'])->name('registerProcess');
 
 });
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
 // Guest Route
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'landing.index');
+Route::view('/bengkels', 'landing.bengkels.grid');
 
 // Dashboard Redirect
-Route::get('/dashboard', function () {
+Route::redirect('/dashboards', '/dashboard-redirect');
+Route::get('/dashboard-redirect', function () {
     $user = Auth::user();
 
     if (!$user) {

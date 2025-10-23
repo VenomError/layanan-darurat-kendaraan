@@ -1,0 +1,13 @@
+// Cara Membuat Tabel Di laravel :
+
+// 1. php artisan make:migration create_testing_table : 
+          $table->id(); 
+          $table->string('name');
+          $table->integer('age')->nullable(); 
+          $table->boolean('is_active')->default(true);
+          $table->text('description')->nullable();
+          $table->timestamps();     
+
+// 2. php artisan migrate:fresh --seed // ini jika ada data di tabel seeders
+// 3. php artisan migrate // ini jika tidak ada data di tabel seeders
+// 4. cek database data sudah masuk.

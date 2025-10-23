@@ -1,7 +1,7 @@
 {{-- Dashboard --}}
 <x-nav-title title="Dashboard" />
 <x-nav-item
-    href="/dashboard"
+    href="{{ route('admin.dashboard') }}"
     title="Dashboard"
     icon="layout-dashboard"
 />
@@ -40,7 +40,7 @@
 {{-- Akun --}}
 <x-nav-title title="Akun" />
 <x-nav-item
-    href="/akun/admin"
+    href="{{ route('admin.akun') }}"
     title="Admin"
     icon="shield"
 />
